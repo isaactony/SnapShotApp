@@ -1,0 +1,4 @@
+//people
+//cities
+//animals
+//nature
