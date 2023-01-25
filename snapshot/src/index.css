@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#F5EFEF ;
+  
 }
 
 code {
@@ -27,7 +29,7 @@ form {
 
 button[type="submit"] {
   width: 20%;
-  background-color: #0ceaf1bd;
+  background-color: #C37656;
   color: white;
   padding: 12px 20px;
   border-radius: 4px;
@@ -37,5 +39,16 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #16c490;
+  background-color: #bf6666;
+}
+nav{
+  background-color: #F5EFEF;
+}
+nav h1 {
+  color: #1D639D;
+  
+}
+nav a {
+  color: #1D639D;
+  text-decoration: none;
 }
