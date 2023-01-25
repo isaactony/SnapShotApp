@@ -14,7 +14,7 @@ function NavBar(){
                   <NavLink style={{marginRight: '70px', textDecoration: 'none'}} className='text-white' to='/nature'>Nature</NavLink>
                 </div>
                 <form className="d-flex" role="search">
-                    <input className="form-control me-2 form-control-sm" type="search" placeholder="Search" aria-label="Search"/>
+                    <input className="form-control me-2 form-control-sm" type="search" placeholder="Search..." aria-label="Search"/>
                     <button className="btn btn-outline-danger" type="submit">Search</button>
                 </form>
             </div>
@@ -23,7 +23,3 @@ function NavBar(){
 }
 export default NavBar;
 
-//people
-//cities
-//animals
-//nature

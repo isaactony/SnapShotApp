@@ -5,6 +5,8 @@ import NavBar from "./NavBar";
 import Gallery from './Gallery';
 import People from './People';
 import Nature from './Nature';
+import Cities from './Cities';
+import Animals from './Animals';
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/people" element={<People />} />
           <Route path="/nature" element={<Nature />} />
+          <Route path="/cities" element={<Cities />} />
+          <Route path="/animals" element={<Animals/>} />
 
    
         </Routes>

@@ -6,7 +6,7 @@ function Gallery () {
   const [images, setImages] = useState([]);
 
   const apikey = "2DKKpd6LevhrI90M8YszntYlBBGyR0iHnJ8NWpa46QZ0R8NXQUj6iJhc";
-  const page_num = 2;
+  const page_num = 5;
 
   useEffect(() => {
     fetch(`https://api.pexels.com/v1/curated?page=${page_num}`, {
@@ -34,7 +34,7 @@ function Gallery () {
                 <img className="card-img-top" src={image.src.large} alt={image.photographer} />
                 <div className="card-body">
                   <p className="card-text">{image.photographer}</p>
-                  <button className="btn btn-primary" onClick={() => handleLike(image.id)}>Like</button>
+                  <button className="btn btn-danger" onClick={() => handleLike(image.id)}>Like</button>
                 </div>
               </div>
             </div>
