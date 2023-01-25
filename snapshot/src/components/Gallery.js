@@ -4,6 +4,7 @@ import "../App.css"
 
 function Gallery () {
   const [images, setImages] = useState([]);
+  const [likes, setLikes] = useState([]);
 
   const apikey = "2DKKpd6LevhrI90M8YszntYlBBGyR0iHnJ8NWpa46QZ0R8NXQUj6iJhc";
   const page_num = 2;
@@ -15,16 +16,22 @@ function Gallery () {
       }
     })
       .then(response => response.json())
-      .then(data => setImages(data.photos))
+      .then(data => {
+        setImages(data.photos);
+        setLikes(data.photos.map(() => 0));
+      })
       .catch(error => console.log(error));
   }, [page_num]);
 
-  const handleLike = (id) => {
-    // handle like action here
+  const handleLikeClick = (index) => {
+    setLikes(prevLikes => {
+      const newLikes = [...prevLikes];
+      newLikes[index]++;
+      return newLikes;
+    });
   }
+
   return (
-    //search
-   
     <div className="image-grid-container"> 
       <div className="image-grid">
         <div className="row">
@@ -34,7 +41,7 @@ function Gallery () {
                 <img className="card-img-top" src={image.src.large} alt={image.photographer} />
                 <div className="card-body">
                   <p className="card-text">{image.photographer}</p>
-                  <button className="btn btn-primary" onClick={() => handleLike(image.id)}>Like</button>
+                  <button className="btn btn-primary" onClick={() => handleLikeClick(index)}>&#x2764; {likes[index]}</button>
                 </div>
               </div>
             </div>
