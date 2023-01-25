@@ -41,7 +41,7 @@ function Gallery () {
                 <img className="card-img-top" src={image.src.large} alt={image.photographer} />
                 <div className="card-body">
                   <p className="card-text">{image.photographer}</p>
-                  <button className="btn btn-primary" onClick={() => handleLikeClick(index)}>&#x2764; {likes[index]}</button>
+                  <button className="btn btn-danger" onClick={() => handleLikeClick(index)}>&#x2764; {likes[index]}</button>
                 </div>
               </div>
             </div>
