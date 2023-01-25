@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 function NavBar(){
 <div className='navbar'>
-    <NavLink to='/Gallery'>Gallery</NavLink>
+    <NavLink to='/'>Gallery</NavLink>
     <NavLink to='/people'>People</NavLink>
     <NavLink to='/cities'>Cities</NavLink>
     <NavLink to='/animals'>Animals</NavLink>
