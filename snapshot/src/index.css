@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+form {
+  width: 100%;
+  padding: 20px;
+}
+
+.form-control {
+  width: 80%;
+  margin-right: 10px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+
+button[type="submit"] {
+  width: 20%;
+  background-color: #0deebdb2;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #16c490;
+}
