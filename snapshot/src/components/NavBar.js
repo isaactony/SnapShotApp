@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
+import Card from './Card';
 
 function NavBar(){
     const [searchInput, setSearchInput] = useState('');
@@ -24,10 +25,6 @@ function NavBar(){
       }, [searchInput]);
 
 
-   
-    
-    
-    
     const handleLikeClick = (index) => {
         setLikes(prevLikes => {
           const newLikes = [...prevLikes];
@@ -35,12 +32,6 @@ function NavBar(){
           return newLikes;
         });
       }
-
-
-
-
-
-
 
 
     return(
@@ -66,18 +57,15 @@ function NavBar(){
 <div className="image-grid-container"> 
 <div className="image-grid">
   <div className="row">
-    {images.map((image, index) => (
-      <div key={image.id} className="col-md-2">
-        <div className="card">
-          <img className="card-img-top" src={image.src.landscape} alt={image.photographer} />
-          <div className="card-body">
-            <p className="card-text">{image.photographer}</p>
-            <button className="btn btn-danger" onClick={() => handleLikeClick(index)}>&#x2764; {likes[index]}</button>
-
-          </div>
-        </div>
-      </div>
-    ))}
+  {images.map((image, index) => (
+        <Card 
+          key={index} 
+          image={image} 
+          index={index} 
+          handleLikeClick={handleLikeClick} 
+          likes={likes} 
+        />
+      ))}
   </div>
 </div>
 </div>
