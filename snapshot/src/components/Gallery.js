@@ -38,14 +38,12 @@ function Gallery () {
           {images.map((image, index) => (
             <div key={image.id} className="col-md-2">
               <div className="card">
-                <img className="card-img-top" src={image.src.large} alt={image.photographer} />
+                <img className="card-img-top" src={image.src.landscape} alt={image.photographer} />
                 <div className="card-body">
                   <p className="card-text">{image.photographer}</p>
-<<<<<<< Kevin
+
                   <button className="btn btn-danger" onClick={() => handleLikeClick(index)}>&#x2764; {likes[index]}</button>
-=======
-                  <button className="btn btn-danger" onClick={() => handleLike(image.id)}>Like</button>
->>>>>>> main
+
                 </div>
               </div>
             </div>
