@@ -5,7 +5,6 @@ function Animals(){
     const [likes, setLikes] = useState([]);
 
 
-
     const apikey = "2DKKpd6LevhrI90M8YszntYlBBGyR0iHnJ8NWpa46QZ0R8NXQUj6iJhc";
     const page_num = 50;
     useEffect(() => {
@@ -26,7 +25,7 @@ function Animals(){
           return newLikes;
         });
       }
-    
+ 
   
 return(
   <>
@@ -50,7 +49,6 @@ return(
     </>
     
 )
-
 
 }
 export default Animals;
