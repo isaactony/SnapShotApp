@@ -7,7 +7,7 @@ function Nature(){
 
 
     const apikey = "2DKKpd6LevhrI90M8YszntYlBBGyR0iHnJ8NWpa46QZ0R8NXQUj6iJhc";
-    const page_num = 100;
+    const page_num = 50;
     useEffect(() => {
         fetch(`https://api.pexels.com/v1/search?query=nature&per_page=${page_num}`, {
           headers: {
