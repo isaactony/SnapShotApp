@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Routes, Route, Navigate } from "react-router-dom";
-import Home from './Home';
 import NavBar from "./NavBar";
 import Gallery from './Gallery';
 import People from './People';
@@ -15,8 +14,7 @@ function App() {
     <div className="container">
         <NavBar />
       <Routes>
-          <Route path="/" element={<Navigate to="/Home" />} />
-          <Route path="/Home" element={<Home/>} />
+          <Route path="/" element={<Navigate to="/Gallery" />} />
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/people" element={<People />} />
           <Route path="/nature" element={<Nature />} />
