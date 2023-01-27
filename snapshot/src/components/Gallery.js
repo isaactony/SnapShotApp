@@ -5,6 +5,8 @@ import "../App.css"
 function Gallery () {
   const [images, setImages] = useState([]);
   const [likes, setLikes] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
+    
 
   const apikey = "2DKKpd6LevhrI90M8YszntYlBBGyR0iHnJ8NWpa46QZ0R8NXQUj6iJhc";
   const page_num = 5;
@@ -22,6 +24,25 @@ function Gallery () {
       })
       .catch(error => console.log(error));
   }, [page_num]);
+
+  useEffect(() => {
+    const handleSearch = async () => {
+      const response = await fetch(`https://api.pexels.com/v1/search?query=${searchInput}&per_page=15`, {
+        headers: {
+          Authorization: apikey
+        }
+      });
+      const data = await response.json();
+      setImages(data.photos);
+    }
+    if (searchInput.length > 2) {
+      handleSearch();
+    }
+  }, [searchInput]);
+  <form  value={searchInput} onChange={(e) => setSearchInput(e.target.value)} className="d-flex" role="search">
+                    <input className="form-control me-2 form-control-sm" type="search" placeholder="Search..." aria-label="Search"/>
+                    <button onClick={() => searchInput(searchInput)} className="btn btn-outline-success" type="submit">Search</button>
+                </form>
 
   const handleLikeClick = (index) => {
     setLikes(prevLikes => {
