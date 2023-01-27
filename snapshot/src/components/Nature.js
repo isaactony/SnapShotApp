@@ -3,8 +3,28 @@ import LikeButton from './LikeButton';
 
 function Nature(){
     const [images, setImages] = useState([]);
+    const [searchInput, setSearchInput] = useState('');
     const [likes, setLikes] = useState(Array(images.length).fill(0));
-
+    useEffect(() => {
+      const handleSearch = async () => {
+        const response = await fetch(`https://api.pexels.com/v1/search?query=${searchInput}&per_page=15`, {
+          headers: {
+            Authorization: "2DKKpd6LevhrI90M8YszntYlBBGyR0iHnJ8NWpa46QZ0R8NXQUj6iJhc"
+          }
+        });
+        const data = await response.json();
+        setImages(data.photos);
+      }
+      if (searchInput.length > 2) {
+        handleSearch();
+      }
+    }, [searchInput]);
+    <form  value={searchInput} onChange={(e) => setSearchInput(e.target.value)} className="d-flex" role="search">
+                    <input className="form-control me-2 form-control-sm" type="search" placeholder="Search..." aria-label="Search"/>
+                    <button onClick={() => searchInput(searchInput)} className="btn btn-outline-success" type="submit">Search</button>
+                </form>
+    
+    
 
 
     const apikey = "2DKKpd6LevhrI90M8YszntYlBBGyR0iHnJ8NWpa46QZ0R8NXQUj6iJhc";
