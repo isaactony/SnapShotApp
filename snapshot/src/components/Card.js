@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Card({ image, index, handleLikeClick, likes }) {
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const handleCardClick = (e) => {
+    if (e.target.className !== "btn btn-danger") {
+      setIsZoomed(!isZoomed);
+    }
+  }
+
   return (
-    <div className="col-md-2">
+    <div className={`col-md-3 ${isZoomed ? 'zoomed' : ''}`} onClick={handleCardClick}>
       <div className="card">
         <img className="card-img-top" src={image.src.landscape} alt={image.photographer} />
         <div className="card-body">

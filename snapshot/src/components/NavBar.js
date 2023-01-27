@@ -18,6 +18,7 @@ function NavBar(){
           });
           const data = await response.json();
           setImages(data.photos);
+          setLikes(Array(data.photos.length).fill(0));
         }
         if (searchInput.length > 2) {
           handleSearch();
