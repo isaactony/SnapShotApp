@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import Card from './Card';
 
+
 function NavBar(){
     const [searchInput, setSearchInput] = useState('');
     const [images, setImages] = useState([]);
@@ -34,8 +35,7 @@ function NavBar(){
         });
       }
 
-
-    return(
+      return(
         <>
         <nav className="navbar navbar-expand-lg navbar-light text-white d-flex align-items-center justify-content-center">
             <div className='container-fluid d-flex flex-column align-items-center justify-content-center'>
@@ -76,4 +76,4 @@ function NavBar(){
     )
 }
 export default NavBar;
-
+    

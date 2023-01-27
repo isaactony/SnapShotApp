@@ -8,6 +8,5 @@ return(
     
 )
 
-
 }
 export default Animals;
