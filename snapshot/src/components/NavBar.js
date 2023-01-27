@@ -41,7 +41,6 @@ function NavBar(){
             <div className='container-fluid d-flex flex-column align-items-center justify-content-center'>
                 <h1 className="font-weight-bold text-center my-4">SNAPSHOT APP</h1>
                 <div className='d-flex align-items-center justify-content-center my-4'>
-                <NavLink style={{marginRight: '70px', textDecoration: 'none'}} to='/'>Home</NavLink>
                   <NavLink style={{marginRight: '70px', textDecoration: 'none'}} to='gallery'>Gallery</NavLink>
                   <NavLink style={{marginRight: '70px', textDecoration: 'none'}} to='/people'>People</NavLink>
                   <NavLink style={{marginRight: '70px', textDecoration: 'none'}} to='/cities'>Cities</NavLink>
