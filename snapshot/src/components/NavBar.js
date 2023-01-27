@@ -1,6 +1,7 @@
-import React,{useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Card from './Card';
+
 
 function NavBar(){
     const [searchInput, setSearchInput] = useState('');
@@ -14,11 +15,20 @@ function NavBar(){
           const response = await fetch(`https://api.pexels.com/v1/search?query=${searchInput}&per_page=20`, {
             headers: {
               Authorization: apikey
+
+    const api_key = "2DKKpd6LevhrI90M8YszntYlBBGyR0iHnJ8NWpa46QZ0R8NXQUj6iJhc";
+
+    useEffect(() => {
+        const handleSearch = async () => {
+          const response = await fetch(`https://api.pexels.com/v1/search?query=${searchInput}&per_page=15`, {
+            headers: {
+              Authorization: api_key
             }
           });
           const data = await response.json();
           setImages(data.photos);
           setLikes(Array(data.photos.length).fill(0));
+
         }
         if (searchInput.length > 2) {
           handleSearch();
@@ -27,15 +37,17 @@ function NavBar(){
 
 
     const handleLikeClick = (index) => {
+
+      const handleLikeClick = (index) => {
         setLikes(prevLikes => {
           const newLikes = [...prevLikes];
           newLikes[index]++;
           return newLikes;
         });
-      }
-
-
-    return(
+      } 
+    
+  
+     return(
         <>
         <nav className="navbar navbar-expand-lg navbar-light text-white d-flex align-items-center justify-content-center">
             <div className='container-fluid d-flex flex-column align-items-center justify-content-center'>
@@ -50,8 +62,31 @@ function NavBar(){
                 </div>
                 <form  value={searchInput} onChange={(e) => setSearchInput(e.target.value)} className="d-flex" role="search">
                     <input className="form-control me-2 form-control-sm" type="search" placeholder="Search..." aria-label="Search"/>
+
                     
+
+                    <button onClick={() => searchInput(searchInput)} className="btn btn-outline-success" type="submit">Search</button>
+
                 </form>
+                <div>
+                  </div>
+          
+          </div>
+          </nav>
+
+          <div className="image-grid-container"> 
+      <div className="image-grid">
+        <div className="row">
+          {images.map((image, index) => (
+            <div key={image.id} className="col-md-2">
+              <div className="card">
+                <img className="card-img-top" src={image.src.landscape} alt={image.photographer} />
+                <div className="card-body">
+                  <p className="card-text">{image.photographer}</p>
+                  <button className="btn btn-danger" onClick={() => handleLikeClick(index)}>&#x2764; {likes[index]}</button>
+
+                </div>
+              </div>
             </div>
 </nav>
 
@@ -73,6 +108,12 @@ function NavBar(){
 
 </>
 
+          ))}
+        </div>
+      </div>
+    </div>
+    </>
+          
     )
 }
 export default NavBar;
