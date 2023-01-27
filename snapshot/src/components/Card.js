@@ -10,7 +10,7 @@ function Card({ image, index, handleLikeClick, likes }) {
   }
 
   return (
-    <div className={`col-md-3 ${isZoomed ? 'zoomed' : ''}`} onClick={handleCardClick}>
+    <div className={`col-md-4 ${isZoomed ? 'zoomed' : ''}`} onClick={handleCardClick}>
       <div className="card">
         <img className="card-img-top" src={image.src.landscape} alt={image.photographer} />
         <div className="card-body">
