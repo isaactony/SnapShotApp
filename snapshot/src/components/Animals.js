@@ -1,8 +1,6 @@
-import React from 'react';
-import ImageGrid from './ImageGrid';
+import React,{useState,useEffect}from 'react';
 
 function Animals(){
-     
     const [images, setImages] = useState([]);
     const [likes, setLikes] = useState([]);
 
@@ -30,7 +28,25 @@ function Animals(){
  
   
 return(
-  <ImageGrid query="animals" perPage={20} />
+  <>
+    <div className="image-grid-container"> 
+      <div className="image-grid">
+        <div className="row">
+          {images.map((image, index) => (
+            <div key={image.id} className="col-md-2">
+              <div className="card">
+                <img className="card-img-top" src={image.src.landscape} alt={image.photographer} />
+                <div className="card-body">
+                  <p className="card-text">{image.photographer}</p>
+                  <button className="btn btn-danger" onClick={() => handleLikeClick(index)}>&#x2764; {likes[index]}</button>
+                 </div>
+                </div>
+              </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    </>
     
 )
 
