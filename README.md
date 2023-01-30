@@ -48,3 +48,5 @@ MIT License.
  - Minne Kamau
  - Kevin 
 - Isaac Tonyloi
+
+Here is the live application https://snapshotapp-minne-kevin-isaac.netlify.app/
