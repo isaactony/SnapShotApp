@@ -24,7 +24,6 @@
 - Navigate to this folder containing this code 
 - open the code with VSCode using code .command
 - run npm install
-- run json-server --watch db.json
 - run npm start
 - remember to also create your own api key from the Pexels API.
 
