@@ -9,7 +9,7 @@
  - Users can also zoom in the image for detailed view.
    
 # Development requirements
-- Pexels API key   ///
+- Pexels API key   /////
 - Visual studio code
 - React 
 - Node js
