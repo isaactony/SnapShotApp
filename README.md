@@ -10,7 +10,7 @@
             
 # Development requirements
 - Pexels API key   
-- Visual studio code
+- Visual studio code  
 - React 
 - Node js
 - npm 
