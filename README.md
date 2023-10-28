@@ -6,7 +6,7 @@
  - Users can also be able to view photos from different categories based on the options provided in the application that is nature and people.
  - Users can also search for any type of image using the search bar
  - Users can like the image and view the photographer.
- - Users can also zoom in the image for detailed view.
+ - Users can also zoom in the image for detailed view.   
             
 # Development requirements
 - Pexels API key   
