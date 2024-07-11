@@ -8,7 +8,7 @@
  - Users can like the image and view the photographer.
  - Users can also zoom in the image for detailed view.   
                  
-# Development requirements   
+# Development requirements     
 - Pexels API key     
 - Visual studio code  
 - React 
