@@ -17,7 +17,7 @@
 - Browser
 
 
-# To get the code,   
+# To get the code,             
 
 - fork and clone the project to your to your local machine.
 - Navigate to this folder containing this code 
