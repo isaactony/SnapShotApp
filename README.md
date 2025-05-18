@@ -13,7 +13,7 @@
 - Visual studio code  
 - React 
 - Node js
-- npm 
+- npm    
 - Browser
 
 
